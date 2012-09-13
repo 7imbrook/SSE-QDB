@@ -2,6 +2,18 @@
     .controls
         = link_to quote.id, {:controller => "quotes", :action => "show", :id => quote}
 
+        %span.vote_spacer
+            
+        = form_for quote, :url => "#{config.relative_url_root}/quotes/#{quote.id}/upvote", :remote => true, :html => {:method => "POST", :class => "form-inline"} do |f|
+            %button.vote_control{:type => "submit"}
+                %a.icon-thumbs-up
+
+        = "#{quote.rating}"
+
+        = form_for quote, :url => "#{config.relative_url_root}/quotes/#{quote.id}/downvote", :remote => true, :html => {:method => "POST", :class => "form-inline"} do |f|
+            %button.vote_control{:type => "submit"}
+                %a.icon-thumbs-down
+
     %br
 
     %blockquote

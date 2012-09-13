@@ -2,7 +2,10 @@ Qdb2::Application.routes.draw do
 #  scope 'qdb' do
   resources :tags
 
-  resources :quotes
+  resources :quotes do
+    post 'upvote'
+    post 'downvote'
+  end
 
   resources :search
 
@@ -69,6 +72,5 @@ Qdb2::Application.routes.draw do
   match "/admin/:id/deny" => "admin#deny"
   match "/rss.xml" => redirect("/qdb/quotes.rss")
   match "/adminrss" => "admin#rss"
-
 #  end
 end

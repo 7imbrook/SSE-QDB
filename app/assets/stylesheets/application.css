@@ -35,3 +35,27 @@ a.tag_button{
 .btn-large{
 	margin-bottom: 5px !important;
 }
+
+form.form-inline{
+	display:inline;
+}
+
+button.vote_control{
+	border-style: none;
+	background:none;
+	-webkit-appearance: none;
+	font-size:1.2em;
+	padding: 3px 3px;
+}
+
+.vote_spacer{
+	font-size:1em;
+	font-weight: bold;
+	padding-left: 5px;	
+	padding-right: 4px;
+}
+
+button.vote_control a:hover{
+	color:orange;
+	text-decoration: none;
+}

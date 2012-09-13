@@ -131,4 +131,21 @@ class QuotesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def upvote
+    @quote = Quote.find(params[:quote_id])
+    @quote.rating += 1
+
+    @quote.save
+    redirect_to(:back)
+  end
+
+  def downvote
+    @quote = Quote.find(params[:quote_id])
+    @quote.rating -= 1
+
+
+    @quote.save
+    redirect_to(:back)
+  end
 end
